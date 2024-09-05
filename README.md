@@ -1,0 +1,1 @@
+Practicas de Taller de Tecnologias de Produccion de Software en Java para el titulo de Analista Programador Universitario de la Facultad de Informatica - Universidad Nacional de La Plata - Septiembre 2024.
