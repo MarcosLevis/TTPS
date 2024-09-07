@@ -6,6 +6,7 @@ target/
 
 ### SERVER ##
 /Servers
+/Servers/*
 
 
 ### STS ###
