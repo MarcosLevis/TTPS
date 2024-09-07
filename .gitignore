@@ -4,6 +4,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### SERVER ##
+/Servers
+
+
 ### STS ###
 .apt_generated
 .classpath
