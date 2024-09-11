@@ -1,16 +1,15 @@
-import jakarta.servlet.ServletConfig;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 import clases.Usuario;
 
@@ -26,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	private Set<Usuario> usuarios= new HashSet<Usuario>();
-	private String mensaje;
+
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -45,15 +44,19 @@ public class LoginServlet extends HttpServlet {
 		this.usuarios = (Set<Usuario>) getServletContext().getAttribute("Usuarios");	
 		String nombre =request.getParameter("usuario");
 		String password =request.getParameter("password");
+		Usuario user = this.usuarios.stream()
+				.filter(u -> u.getNombre().equals(nombre) && u.getPassword().equals(password))
+				.findFirst().orElse(null);
 		
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("<html><body>");	
-		for (Usuario p : this.usuarios) {
-			out.println("<h1>"+ p.getNombre()+ "</h1>");
+		if (user != null) {					
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Menu");		
+			request.setAttribute("perfil", user.getPerfil());
+			dispatcher.forward(request, response);
+		}else {
+			response.sendRedirect("error.html");
 		}
-		out.println("</body></html>");	
-		out.close();
+		
+
 	}
 
 	/**

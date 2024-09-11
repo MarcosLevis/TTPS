@@ -17,8 +17,8 @@ public class InicializaUsuariosListener implements ServletContextListener{
 		
 	}
 	public void contextInitialized(ServletContextEvent sce) {
-		Usuario user1 = new Usuario("Marcos", "Levis");
-		Usuario user2 = new Usuario("Mora", "Galarza");
+		Usuario user1 = new Usuario("Marcos", "Levis", "Administrador");
+		Usuario user2 = new Usuario("Mora", "Galarza", "Publicador");
 		Set<Usuario> usuarios= new HashSet<Usuario>();
 		usuarios.add(user1);
 		usuarios.add(user2);
