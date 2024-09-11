@@ -18,6 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 })
 
 public class Premio extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 	private String mensaje;
 	    /**
@@ -30,6 +31,7 @@ public class Premio extends HttpServlet {
     public void init(ServletConfig config) {
     	mensaje = config.getInitParameter("mensaje");
     }
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

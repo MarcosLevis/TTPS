@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
  */
 @WebServlet("/Premio")
 public class Premio extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 	private String mensaje = "Hola, como estas nombre";
     /**
