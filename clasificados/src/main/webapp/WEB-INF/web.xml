@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
   <display-name>clasificados</display-name>
+  <context-param>
+    <param-name>Usuarios</param-name>
+    <param-value>Usuarios</param-value>
+  </context-param>
+  <context-param>
+    <param-name>nombre</param-name>
+    <param-value>ElSitioGod</param-value>
+  </context-param>
+  <context-param>
+    <param-name>telefono</param-name>
+    <param-value>12378</param-value>
+  </context-param>
+  <context-param>
+    <param-name>mail</param-name>
+    <param-value>ttps@gmail.com</param-value>
+  </context-param>
   <welcome-file-list>
     <welcome-file>login.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -11,26 +27,12 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>LoginServlet</display-name>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>LoginServlet</servlet-class>
+    <display-name>Encabezado</display-name>
+    <servlet-name>Encabezado</servlet-name>
+    <servlet-class>Encabezado</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/LoginServlet</url-pattern>
+    <servlet-name>Encabezado</servlet-name>
+    <url-pattern>/Encabezado</url-pattern>
   </servlet-mapping>
-    <servlet>
-    <description></description>
-    <display-name>Menu</display-name>
-    <servlet-name>Menu</servlet-name>
-    <servlet-class>Menu</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Menu</servlet-name>
-    <url-pattern>/Menu</url-pattern>
-  </servlet-mapping>
-  <context-param>
-    <param-name>Usuarios</param-name>
-    <param-value>Usuarios</param-value>
-  </context-param>
 </web-app>
